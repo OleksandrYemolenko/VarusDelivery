@@ -21,8 +21,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity {
+public class StartScreenActivity extends AppCompatActivity {
 
+    public static final String STORAGE_NAME = "STORAGE";
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
