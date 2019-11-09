@@ -2,17 +2,16 @@
     <string name="app_name">Varus Delivery</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Varus подписка</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="menu_sale">Акции</string>
+    <string name="menu_goods">Товары</string>
+    <string name="menu_viewed">Просмотренные</string>
+    <string name="menu_orders">Заказы</string>
+    <string name="menu_delivery">Доставки</string>
+    <string name="menu_cart">Корзина</string>
     <string name="getNumberText">Пожалуйста введите свой номер телефона.</string>
     <string name="passRus">Пароль</string>
 </resources>

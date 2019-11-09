@@ -1,5 +1,6 @@
 package KNU_kitkat.varusdelivery;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 import okhttp3.MediaType;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class StartScreenActivity extends AppCompatActivity {
 
@@ -30,18 +32,23 @@ public class StartScreenActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
+    private Toolbar toolbar;
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
+    private FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fabCart);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +60,8 @@ public class StartScreenActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_sale, R.id.nav_goods, R.id.nav_view,
+                R.id.nav_orders, R.id.nav_delivery, R.id.nav_cart)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
