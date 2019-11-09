@@ -3,5 +3,5 @@
     <color name="colorPrimary">#FF5722</color>
     <color name="colorPrimaryDark">#F35C23</color>
     <color name="colorAccent">#EE6534</color>
-    <color name="loginBackground">#FAFAFA</color>
+    <color name="background">#FAFAFA</color>
 </resources>

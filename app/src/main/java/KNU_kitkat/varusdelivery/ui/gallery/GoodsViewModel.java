@@ -1,16 +1,16 @@
-package KNU_kitkat.varusdelivery.ui.home;
+package KNU_kitkat.varusdelivery.ui.gallery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class GoodsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public GoodsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is goods fragment");
     }
 
     public LiveData<String> getText() {

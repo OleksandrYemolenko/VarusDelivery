@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="40dp"
-    android:background="@color/loginBackground"
+    android:background="@color/background"
     tools:ignore="MissingDefaultResource">
 
     <RelativeLayout
@@ -21,7 +21,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:background="@color/loginBackground"
+            android:background="@color/background"
             android:defaultFocusHighlightEnabled="false"
             >
             <EditText
@@ -43,7 +43,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginTop="70dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:background="@color/loginBackground"
+            android:background="@color/background"
             android:defaultFocusHighlightEnabled="false"
             >
 

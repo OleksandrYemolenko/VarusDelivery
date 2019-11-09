@@ -3,41 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_sale">
-
-    <fragment
-        android:id="@+id/nav_sale"
-        android:name="KNU_kitkat.varusdelivery.ui.home.HomeFragment"
-        android:label="@string/menu_sale"
-        tools:layout="@layout/fragment_sale" />
+    app:startDestination="@+id/nav_goods">
 
     <fragment
         android:id="@+id/nav_goods"
-        android:name="KNU_kitkat.varusdelivery.ui.gallery.GalleryFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.gallery.GoodsFragment"
         android:label="@string/menu_goods"
         tools:layout="@layout/fragment_goods" />
 
     <fragment
         android:id="@+id/nav_viewed"
-        android:name="KNU_kitkat.varusdelivery.ui.slideshow.SlideshowFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.slideshow.ViewedFragment"
         android:label="@string/menu_viewed"
         tools:layout="@layout/fragment_viewed" />
 
     <fragment
         android:id="@+id/nav_orders"
-        android:name="KNU_kitkat.varusdelivery.ui.tools.ToolsFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.tools.OrderFragment"
         android:label="@string/menu_orders"
         tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/nav_delivery"
-        android:name="KNU_kitkat.varusdelivery.ui.share.ShareFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.share.DeliveryFragment"
         android:label="@string/menu_delivery"
         tools:layout="@layout/fragment_delivery" />
 
     <fragment
         android:id="@+id/nav_cart"
-        android:name="KNU_kitkat.varusdelivery.ui.send.SendFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.send.CartFragment"
         android:label="@string/menu_cart"
         tools:layout="@layout/fragment_cart" />
 </navigation>
