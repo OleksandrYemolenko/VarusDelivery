@@ -2,35 +2,33 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="40dp"
     android:background="@color/loginBackground"
-    tools:ignore="MissingDefaultResource">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         >
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:background="@color/loginBackground"
             android:defaultFocusHighlightEnabled="false"
             >
             <EditText
-                android:id="@+id/pass"
-                android:layout_width="340dp"
+                android:id="@+id/numberS"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Введите пароль"
+                android:text="+380"
                 android:textSize="20sp"
-                android:inputType="textPassword"
+                android:inputType="none"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -38,29 +36,39 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
+            android:layout_marginStart="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="70dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:background="@color/loginBackground"
             android:defaultFocusHighlightEnabled="false"
             >
 
             <EditText
-                android:id="@+id/repPass"
-                android:layout_width="340dp"
+                android:id="@+id/number"
+                android:layout_width="290dp"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="phone"
                 android:textSize="20sp"
-                android:hint="Повторите пароль"
+                android:hint="Номер телефона"
+                android:maxLength="12"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/getNumberText"
+        android:id="@+id/getNumberText"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:textSize="18sp"
+        android:layout_marginStart="30dp"
+        />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabRegister"
+        android:id="@+id/fabGetNumb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

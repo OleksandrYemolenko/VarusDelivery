@@ -8,15 +8,12 @@
         android:layout_width="80dp"
         android:layout_height="20dp"
         android:id="@+id/loginLButton"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:id="@+id/numberL"
-        android:hint="Номер телефона"/>
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:id="@+id/passL"
-        android:hint="Пароль"/>
+        android:inputType="textPassword"
+        android:hint="@string/passRus"
+        android:autofillHints="@string/passRus"/>
 
 </LinearLayout>
