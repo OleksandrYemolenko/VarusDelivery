@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Varus Delivery</string>
+    <string name="app_name">Varus.Подписка</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Varus подписка</string>
+    <string name="nav_header_title">Varus.Подписка</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
