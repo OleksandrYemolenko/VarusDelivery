@@ -1,5 +1,6 @@
 package KNU_kitkat.varusdelivery;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
@@ -70,7 +71,9 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //It works cause of this line
         navigationView.bringToFront();
+        //Start page
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_goods));
 
 
@@ -126,19 +129,14 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
 
         if (id == R.id.nav_goods) {
             fragmentClass = GoodsFragment.class;
-            print("nav_goods");
         } else if (id == R.id.nav_viewed) {
             fragmentClass = ViewedFragment.class;
-            print("nav_viewed");
         } else if (id == R.id.nav_orders) {
             fragmentClass = OrderFragment.class;
-            print("nav_orders");
         } else if (id == R.id.nav_delivery) {
             fragmentClass = DeliveryFragment.class;
-            print("nav_delivery");
         } else if (id == R.id.nav_cart) {
             fragmentClass = CartFragment.class;
-            print("nav_cart");
         }
 
         try {
@@ -161,8 +159,8 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
         return true;
     }
 
-    private void print(String mMessage) {
-        Toast.makeText(this, mMessage, Toast.LENGTH_LONG).show();
+    public static void print(String mMessage, Context context) {
+        Toast.makeText(context, mMessage, Toast.LENGTH_LONG).show();
         System.out.println(mMessage);
     }
 }
