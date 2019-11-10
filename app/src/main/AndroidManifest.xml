@@ -31,6 +31,9 @@
         <activity
             android:name=".RegisterScreenActivity">
         </activity>
+        <activity
+            android:name=".DishActivity" >
+        </activity>
     </application>
 
     <dist:module dist:instant="true" />

@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    card_view:cardBackgroundColor="@color/background"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="3dp">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:id="@+id/imgDish"
+            android:layout_width="125dp"
+            android:scaleType="centerCrop"
+            android:layout_height="100dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="32dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            tools:text="Dish name" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="48dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="32dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            tools:text="Dish name" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

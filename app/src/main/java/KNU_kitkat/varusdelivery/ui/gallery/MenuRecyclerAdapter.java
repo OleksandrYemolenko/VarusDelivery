@@ -55,11 +55,8 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
         holder.itemView.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent i = new Intent(context, DishActivity.class);
-                categoty = item.getId();
-                i.putExtra("id", categoty);
-                context.startActivity(i);*/
-                //MainActivity.ChangeAct(context);
+                Intent i = new Intent(context, DishActivity.class);
+                context.startActivity(i);
             }
         });
     }

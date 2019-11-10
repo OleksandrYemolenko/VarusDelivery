@@ -7,13 +7,10 @@ public class DishItem extends Item {
     private double price;
     private String name, img, description;
 
-    public DishItem(int id, String name, String img, int id1, int category, double price, String name1, String img1, String description) {
+    public DishItem( String name, String img, int id, int category, double price, String description) {
         super(id, name, img);
-        this.id = id1;
         this.category = category;
         this.price = price;
-        this.name = name1;
-        this.img = img1;
         this.description = description;
     }
 
