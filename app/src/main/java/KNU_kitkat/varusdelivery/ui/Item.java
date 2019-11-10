@@ -11,6 +11,10 @@ public class Item {
         this.img = img;
     }
 
+    public Item() {
+
+    }
+
     public int getId() {
         return id;
     }

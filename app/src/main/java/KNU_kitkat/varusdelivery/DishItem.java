@@ -1,5 +1,7 @@
 package KNU_kitkat.varusdelivery;
 
+import android.content.Intent;
+
 import KNU_kitkat.varusdelivery.ui.Item;
 
 public class DishItem extends Item {
@@ -12,6 +14,10 @@ public class DishItem extends Item {
         this.category = category;
         this.price = price;
         this.description = description;
+    }
+
+    public DishItem() {
+
     }
 
     public int getCategory() {

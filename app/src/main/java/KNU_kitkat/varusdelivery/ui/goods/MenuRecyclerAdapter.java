@@ -1,4 +1,4 @@
-package KNU_kitkat.varusdelivery.ui.gallery;
+package KNU_kitkat.varusdelivery.ui.goods;
 
 import android.content.Context;
 import android.content.Intent;

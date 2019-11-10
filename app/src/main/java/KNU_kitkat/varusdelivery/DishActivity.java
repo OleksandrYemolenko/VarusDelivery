@@ -30,7 +30,7 @@ public class DishActivity extends AppCompatActivity {
         context = this;
 
         if(true) {
-            items_1.add(new DishItem("Апельсиновый", "https://healthynibblesandbits.com/wp-content/uploads/2016/11/How-to-Cut-a-Pomegranate-FF.jpg", 0, 1, 50, "asd"));
+            items_1.add(new DishItem("Апельсиновый", "https://healthynibblesandbits.com/wp-content/uploads/2016/11/How-to-Cut-a-Pomegranate-FF.jpg", 0, 1, 5000, "Апельсиновый сок — продукт, получаемый из апельсинов. Различают «свежеотжатый апельсиновый сок», «апельсиновый сок прямого отжима» и «восстановленный апельсиновый сок». Термин «восстановленный апельсиновый сок» используется, когда речь идёт о продукте, произведённом из концентрированного сока."));
 
         }
         recyclerView = (RecyclerView) findViewById(R.id.dishRecView);

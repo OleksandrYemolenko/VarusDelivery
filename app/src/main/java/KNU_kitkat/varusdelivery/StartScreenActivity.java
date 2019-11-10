@@ -1,7 +1,6 @@
 package KNU_kitkat.varusdelivery;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -10,21 +9,16 @@ import com.google.android.material.snackbar.Snackbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import KNU_kitkat.varusdelivery.ui.Item;
-import KNU_kitkat.varusdelivery.ui.gallery.GoodsFragment;
+import KNU_kitkat.varusdelivery.ui.goods.GoodsFragment;
 import KNU_kitkat.varusdelivery.ui.send.CartFragment;
 import KNU_kitkat.varusdelivery.ui.share.DeliveryFragment;
-import KNU_kitkat.varusdelivery.ui.slideshow.ViewedFragment;
+import KNU_kitkat.varusdelivery.ui.viewed.ViewedFragment;
 import KNU_kitkat.varusdelivery.ui.tools.OrderFragment;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -36,14 +30,16 @@ import okhttp3.MediaType;
 
 import android.view.Menu;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class StartScreenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static final String STORAGE_NAME = "STORAGE";
     public static final String base = "https://varus-delivery.herokuapp.com/";
     public static final MediaType JSON = MediaType.parse("application/json");
+    public static ArrayList<DishItem> viewed = new ArrayList<>();
 
     private AppBarConfiguration mAppBarConfiguration;
 

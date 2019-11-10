@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_goods"
-        android:name="KNU_kitkat.varusdelivery.ui.gallery.GoodsFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.goods.GoodsFragment"
         android:label="@string/menu_goods"
         tools:layout="@layout/fragment_goods" />
 
     <fragment
         android:id="@+id/nav_viewed"
-        android:name="KNU_kitkat.varusdelivery.ui.slideshow.ViewedFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.viewed.ViewedFragment"
         android:label="@string/menu_viewed"
         tools:layout="@layout/fragment_viewed" />
 

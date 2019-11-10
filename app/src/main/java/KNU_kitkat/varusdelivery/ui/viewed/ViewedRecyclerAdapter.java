@@ -1,5 +1,4 @@
-package KNU_kitkat.varusdelivery;
-
+package KNU_kitkat.varusdelivery.ui.viewed;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,15 +14,20 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import KNU_kitkat.varusdelivery.DishActivity;
+import KNU_kitkat.varusdelivery.DishItem;
+import KNU_kitkat.varusdelivery.DishPageActivity;
+import KNU_kitkat.varusdelivery.R;
+import KNU_kitkat.varusdelivery.StartScreenActivity;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapter.RecyclerViewHolder> {
+public class ViewedRecyclerAdapter extends RecyclerView.Adapter<KNU_kitkat.varusdelivery.ui.viewed.ViewedRecyclerAdapter.RecyclerViewHolder> {
     private int category;
     private Context context;
     ArrayList<DishItem> items = new ArrayList<>();
 
-    public DishRecyclerAdapter(Context context) {
+    public ViewedRecyclerAdapter(Context context) {
         this.context = context;
         category = 0;
 
@@ -39,13 +43,13 @@ public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapte
 
     @NonNull
     @Override
-    public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public KNU_kitkat.varusdelivery.ui.viewed.ViewedRecyclerAdapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dish_item, parent, false);
-        return new RecyclerViewHolder(view);
+        return new KNU_kitkat.varusdelivery.ui.viewed.ViewedRecyclerAdapter.RecyclerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final KNU_kitkat.varusdelivery.ui.viewed.ViewedRecyclerAdapter.RecyclerViewHolder holder, final int position) {
         final DishItem dishItem = items.get(position);
 
         holder.bind(dishItem);
@@ -60,8 +64,6 @@ public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapte
                 i.putExtra("dishItem.name", dishItem.getName());
                 i.putExtra("dishItem.img", dishItem.getImg());
                 i.putExtra("dishItem.description", dishItem.getDescription());
-
-                StartScreenActivity.viewed.add(dishItem);
 
                 context.startActivity(i);
             }
