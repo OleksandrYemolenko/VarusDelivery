@@ -114,7 +114,6 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
         }
         try {
             JSONArray array = result.getJSONObject("information").getJSONArray("products");
-            print(array.length() + "", this);
             for(int i = 0; i < array.length(); ++i) {
                 JSONObject item = array.getJSONObject(i);
 
@@ -148,7 +147,6 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
         }
         try {
             JSONArray array = result.getJSONObject("information").getJSONArray("categories");
-            print(array.length() + "", this);
             for(int i = 0; i < array.length(); ++i) {
                 JSONObject item = array.getJSONObject(i);
 

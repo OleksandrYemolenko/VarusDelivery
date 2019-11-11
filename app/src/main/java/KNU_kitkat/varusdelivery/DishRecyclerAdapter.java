@@ -30,12 +30,6 @@ public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapte
         items = StartScreenActivity.products.get(category);
     }
 
-    public void addAll(List<DishItem> items) {
-        int pos = getItemCount();
-        this.items.addAll(items);
-        notifyItemRangeInserted(pos, this.items.size());
-    }
-
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -70,7 +64,11 @@ public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return items.size();
+        try{
+            return items.size();
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {

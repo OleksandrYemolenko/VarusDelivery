@@ -37,7 +37,6 @@ public class DishActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         intent = getIntent();
-
         category = intent.getIntExtra("category", 0);
 
         Slidr.attach(this);
