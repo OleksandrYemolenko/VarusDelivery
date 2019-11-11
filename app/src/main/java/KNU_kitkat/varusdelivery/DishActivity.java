@@ -1,6 +1,7 @@
 package KNU_kitkat.varusdelivery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.r0adkll.slidr.Slidr;
@@ -17,10 +18,8 @@ public class DishActivity extends AppCompatActivity {
     private LinearLayoutManager manager;
     private DishRecyclerAdapter adapter;
     private Context context;
-    public static ArrayList<DishItem> items_1 = new ArrayList<>();
-    public static ArrayList<DishItem> items_2 = new ArrayList<>();
-    public static ArrayList<DishItem> items_3 = new ArrayList<>();
-    public static ArrayList<DishItem> items_4 = new ArrayList<>();
+    private Intent intent;
+    public static int category;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,10 +28,6 @@ public class DishActivity extends AppCompatActivity {
 
         context = this;
 
-        if(true) {
-            items_1.add(new DishItem("Апельсиновый", "https://healthynibblesandbits.com/wp-content/uploads/2016/11/How-to-Cut-a-Pomegranate-FF.jpg", 0, 1, 5000, "Апельсиновый сок — продукт, получаемый из апельсинов. Различают «свежеотжатый апельсиновый сок», «апельсиновый сок прямого отжима» и «восстановленный апельсиновый сок». Термин «восстановленный апельсиновый сок» используется, когда речь идёт о продукте, произведённом из концентрированного сока."));
-
-        }
         recyclerView = (RecyclerView) findViewById(R.id.dishRecView);
 
         manager = new LinearLayoutManager(context);
@@ -40,6 +35,10 @@ public class DishActivity extends AppCompatActivity {
 
         adapter = new DishRecyclerAdapter(context);
         recyclerView.setAdapter(adapter);
+
+        intent = getIntent();
+
+        category = intent.getIntExtra("category", 0);
 
         Slidr.attach(this);
     }

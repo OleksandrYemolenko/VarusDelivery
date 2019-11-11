@@ -19,19 +19,19 @@
 
     <fragment
         android:id="@+id/nav_orders"
-        android:name="KNU_kitkat.varusdelivery.ui.tools.OrderFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.order.OrderFragment"
         android:label="@string/menu_orders"
         tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/nav_delivery"
-        android:name="KNU_kitkat.varusdelivery.ui.share.DeliveryFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.delivery.DeliveryFragment"
         android:label="@string/menu_delivery"
         tools:layout="@layout/fragment_delivery" />
 
     <fragment
         android:id="@+id/nav_cart"
-        android:name="KNU_kitkat.varusdelivery.ui.send.CartFragment"
+        android:name="KNU_kitkat.varusdelivery.ui.cart.CartFragment"
         android:label="@string/menu_cart"
         tools:layout="@layout/fragment_cart" />
 </navigation>

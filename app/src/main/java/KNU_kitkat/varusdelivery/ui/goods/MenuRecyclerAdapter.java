@@ -16,6 +16,7 @@ import java.util.List;
 
 import KNU_kitkat.varusdelivery.DishActivity;
 import KNU_kitkat.varusdelivery.R;
+import KNU_kitkat.varusdelivery.StartScreenActivity;
 import KNU_kitkat.varusdelivery.ui.Item;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,9 +29,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
     public MenuRecyclerAdapter(Context context) {
         this.context = context;
 
-        items.add(new Item(0, "Соки", "https://healthynibblesandbits.com/wp-content/uploads/2016/11/How-to-Cut-a-Pomegranate-FF.jpg"));
-        items.add(new Item(1, "Пицца", "https://www.slivki.by/znijki-media/w522_322/default/1009921/146.jpg"));
-        items.add(new Item(2, "Кофе", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/701/coffee-mug-1493946797.jpg"));
+        items = StartScreenActivity.categories;
     }
 
     public void addAll(List<Item> items) {
@@ -56,6 +55,7 @@ public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapte
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, DishActivity.class);
+                i.putExtra("category", item.getId());
                 context.startActivity(i);
             }
         });

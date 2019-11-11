@@ -29,10 +29,8 @@ public class ViewedRecyclerAdapter extends RecyclerView.Adapter<KNU_kitkat.varus
 
     public ViewedRecyclerAdapter(Context context) {
         this.context = context;
-        category = 0;
 
-        this.items = DishActivity.items_1;
-
+        this.items = StartScreenActivity.viewed;
     }
 
     public void addAll(List<DishItem> items) {

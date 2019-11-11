@@ -9,6 +9,7 @@ public class MyRequest {
 
     public static final String COMMON = "https://varus-delivery.herokuapp.com/";
     public static final String GET_CATEGORIES = "getAllCategories";
+    public static final String GET_ALL_PRODUCTS = "getAllProducts";
     public static final String GET_PRODUCTS_BY_CATEGORY = "getProductsByCategory";
     public static final String ADD_ORDER = "addOrder";
     public static final String GET_USER_ORDERS = "getOrdersByUser";

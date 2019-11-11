@@ -1,4 +1,4 @@
-package KNU_kitkat.varusdelivery.ui.share;
+package KNU_kitkat.varusdelivery.ui.delivery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

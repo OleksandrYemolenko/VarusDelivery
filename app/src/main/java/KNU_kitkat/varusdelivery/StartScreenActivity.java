@@ -9,11 +9,16 @@ import com.google.android.material.snackbar.Snackbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import KNU_kitkat.varusdelivery.rest.*;
+import KNU_kitkat.varusdelivery.ui.Item;
 import KNU_kitkat.varusdelivery.ui.goods.GoodsFragment;
-import KNU_kitkat.varusdelivery.ui.send.CartFragment;
-import KNU_kitkat.varusdelivery.ui.share.DeliveryFragment;
 import KNU_kitkat.varusdelivery.ui.viewed.ViewedFragment;
-import KNU_kitkat.varusdelivery.ui.tools.OrderFragment;
+import KNU_kitkat.varusdelivery.ui.order.OrderFragment;
+import KNU_kitkat.varusdelivery.ui.delivery.DeliveryFragment;
+import KNU_kitkat.varusdelivery.ui.cart.CartFragment;
+
+
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
@@ -28,11 +33,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import okhttp3.MediaType;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.view.Menu;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StartScreenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -40,6 +51,9 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
     public static final String base = "https://varus-delivery.herokuapp.com/";
     public static final MediaType JSON = MediaType.parse("application/json");
     public static ArrayList<DishItem> viewed = new ArrayList<>();
+    public static ArrayList<Item> categories = new ArrayList<>();
+    public static HashMap<Integer, ArrayList<DishItem>> products = new HashMap<Integer, ArrayList<DishItem>>();
+    
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -81,6 +95,77 @@ public class StartScreenActivity extends AppCompatActivity implements Navigation
                         .setAction("Action", null).show();
             }
         });
+
+        getCategories();
+        getAllProducts();
+    }
+
+    private void getAllProducts() {
+        JSONObject result = new JSONObject();
+
+        MyRequest request = new MyRequest(new JSONObject(), MyRequest.COMMON + MyRequest.GET_ALL_PRODUCTS, new JSONObject());
+
+        GetRequestController controller = new GetRequestController();
+        controller.execute(request);
+        try {
+            result = controller.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            JSONArray array = result.getJSONObject("information").getJSONArray("products");
+            print(array.length() + "", this);
+            for(int i = 0; i < array.length(); ++i) {
+                JSONObject item = array.getJSONObject(i);
+
+                String name = item.getString("name");
+                String img = item.getString("img");
+                String desc = item.getString("description");
+                int id = item.getInt("id");
+                int category = item.getInt("category");
+                double price = item.getDouble("price");
+
+
+                products.get(category).add(new DishItem(name, img, id, category, price, desc));
+            }
+        } catch (JSONException e) {
+            print("made",  this);
+            e.printStackTrace();
+        }
+    }
+
+    private void getCategories() {
+        JSONObject result = new JSONObject();
+
+        MyRequest request = new MyRequest(new JSONObject(), MyRequest.COMMON + MyRequest.GET_CATEGORIES, new JSONObject());
+
+        GetRequestController controller = new GetRequestController();
+        controller.execute(request);
+        try {
+            result = controller.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            JSONArray array = result.getJSONObject("information").getJSONArray("categories");
+            print(array.length() + "", this);
+            for(int i = 0; i < array.length(); ++i) {
+                JSONObject item = array.getJSONObject(i);
+
+                String name = item.getString("name");
+                String img = item.getString("img");
+                int id = item.getInt("id");
+
+                ArrayList<DishItem> items = new ArrayList<>();
+
+                products.put(id, items);
+
+                categories.add(new Item(id, name, img));
+            }
+        } catch (JSONException e) {
+            print("made",  this);
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -25,10 +25,9 @@ public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapte
 
     public DishRecyclerAdapter(Context context) {
         this.context = context;
-        category = 0;
+        category = DishActivity.category;
 
-        this.items = DishActivity.items_1;
-
+        items = StartScreenActivity.products.get(category);
     }
 
     public void addAll(List<DishItem> items) {

@@ -1,4 +1,4 @@
-package KNU_kitkat.varusdelivery.ui.share;
+package KNU_kitkat.varusdelivery.ui.delivery;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,16 +1,12 @@
-package KNU_kitkat.varusdelivery.ui.tools;
+package KNU_kitkat.varusdelivery.ui.order;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,7 +15,6 @@ import java.util.List;
 import KNU_kitkat.varusdelivery.DishActivity;
 import KNU_kitkat.varusdelivery.OrderItem;
 import KNU_kitkat.varusdelivery.R;
-import KNU_kitkat.varusdelivery.ui.Item;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,10 +27,9 @@ public class OrderRecyclerAdapter extends RecyclerView.Adapter<OrderRecyclerAdap
     public OrderRecyclerAdapter(Context context) {
         this.context = context;
 
-        items.add(new OrderItem(0, -1, new Date(), 500));
-        items.add(new OrderItem(0, 0, new Date(), 500));
-        items.add(new OrderItem(1, 1, new Date(), 500));
-        items.add(new OrderItem(2, 2, new Date(), 500));
+        items.add(new OrderItem(0, -1, new Date(), 500, 0, 0, 0, null));
+        items.add(new OrderItem(0, 0, new Date(), 500, 0, 0, 0, null));
+        items.add(new OrderItem(1, 1, new Date(), 500, 0, 0, 0, null));
     }
 
     public void addAll(List<OrderItem> items) {
@@ -61,6 +55,7 @@ public class OrderRecyclerAdapter extends RecyclerView.Adapter<OrderRecyclerAdap
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, DishActivity.class);
+                i.putExtra("itemInfo", item);
                 context.startActivity(i);
             }
         });
@@ -97,24 +92,11 @@ public class OrderRecyclerAdapter extends RecyclerView.Adapter<OrderRecyclerAdap
         }
 
         void setStatus(int status) {
-/*            if(status == -1)
-                cardView.setCardBackgroundColor(Color.RED);
-            else if(status == 0)
-                cardView.setCardBackgroundColor(Color.GRAY);
-            else if(status == 1)
-                cardView.setCardBackgroundColor(Color.YELLOW);
-            else if(status == 2)
-                cardView.setCardBackgroundColor(Color.GREEN);
-
-            cardView.setAlpha((float)0.5);*/
-
             if(status == -1)
                 color.setBackgroundColor(context.getResources().getColor(R.color.cardRed));
             else if(status == 0)
                 color.setBackgroundColor(context.getResources().getColor(R.color.cardGrey));
             else if(status == 1)
-                color.setBackgroundColor(context.getResources().getColor(R.color.cardYellow));
-            else if(status == 2)
                 color.setBackgroundColor(context.getResources().getColor(R.color.cardGreen));
         }
     }

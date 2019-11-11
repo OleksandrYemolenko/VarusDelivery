@@ -1,4 +1,4 @@
-package KNU_kitkat.varusdelivery.ui.send;
+package KNU_kitkat.varusdelivery.ui.cart;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

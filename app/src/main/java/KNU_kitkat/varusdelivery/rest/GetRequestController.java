@@ -47,4 +47,9 @@ public class GetRequestController extends AsyncTask<MyRequest, Integer, JSONObje
 
         return new JSONObject();
     }
+
+    @Override
+    protected void onPostExecute(JSONObject jsonObject) {
+        super.onPostExecute(jsonObject);
+    }
 }
