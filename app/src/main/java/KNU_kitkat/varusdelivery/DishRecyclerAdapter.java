@@ -4,6 +4,8 @@ package KNU_kitkat.varusdelivery;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.text.method.ArrowKeyMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +25,9 @@ public class DishRecyclerAdapter extends RecyclerView.Adapter<DishRecyclerAdapte
     private Context context;
     ArrayList<DishItem> items = new ArrayList<>();
 
-    public DishRecyclerAdapter(Context context) {
+    public DishRecyclerAdapter(Context context, int category) {
         this.context = context;
-        category = DishActivity.category;
+        this.category = category;
 
         items = StartScreenActivity.products.get(category);
     }

@@ -28,16 +28,16 @@ public class DishActivity extends AppCompatActivity {
 
         context = this;
 
+        intent = getIntent();
+        category = intent.getIntExtra("category", 0);
+
         recyclerView = (RecyclerView) findViewById(R.id.dishRecView);
 
         manager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(manager);
 
-        adapter = new DishRecyclerAdapter(context);
+        adapter = new DishRecyclerAdapter(context, category);
         recyclerView.setAdapter(adapter);
-
-        intent = getIntent();
-        category = intent.getIntExtra("category", 0);
 
         Slidr.attach(this);
     }
